@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+    background-image: url('login-page-photo/login-page-2.png');
+    width: 100%;
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    /* background-image: url("login-page-photo/glass2.avif"); */
+background-color:cornflowerblue;
+   width: 25%;
+   min-width: 350px;
+   height: 70%;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+.footer{
+    margin-top: 0px;
+}
+form img{
+   width: 80px;
+   height: 80px;
+   margin-top: 50px;
+   margin-bottom: 20px;
+   border-radius: 50px;
+}
+
+.email{
+    width: 70%;
+}
+.password{
+    width: 70%;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid slategray;
+    font-size: 16px;
+}
+form button{
+    width: 130px;
+    font-size: 15px;
+    color: #fff;
+    background-color: rebeccapurple;
+    padding: 10px 15px;
+    font-weight: 800;
+    cursor: pointer;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+@media screen and (max-width:400px){
+    form{
+    background-color:cornflowerblue;
+       width: 90%;
+       min-width: 0px;
+    }
+    form button{
+        width: 40%;
+    }
+}

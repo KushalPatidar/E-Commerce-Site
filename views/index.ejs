@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/media.css">
+</head>
+<body>
+    <header> 
+        <nav>
+           <div class="logo">
+              <img src="styles/photo/Screenshot (257).png" alt="">
+           </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <%if(flag===1){%>
+                    <li><a href="/logout">Logout</a></li>
+                <%}else{%>
+                   <li><a href="/l">Login</a></li>
+                <%}%>
+                <li><a href="/Wishlist">Wishlist</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="/cart"><img src="styles/photo/cart.png" id="icon" alt=""></a>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="box1">
+            <img src="styles/photo/box1p.jpg" alt="">
+        </div>
+        <div class="box2">
+            <img src="styles/photo/hero.jpg" alt="">
+        </div>
+    </div>
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="boxes">
+            <%for(let i=0;i<arr.length;i++){
+                let url = "styles/photo/"+arr[i].id+".webp";
+                let s = "/product/"+arr[i].id;
+            %>
+            <div class="box">
+                <a href = <%=s%> id="ach">
+                    <img src = <%= url %> class='cloth' alt=""> 
+                    <div class="des">
+                        <div class="brand"><%=arr[i].brand%></div>
+                        <h5><%=arr[i].name%></h5>
+                        <div class="star">
+                            <img src="styles/photo/fullstar.png" alt="">
+                            <img src="styles/photo/fullstar.png" alt="">
+                            <img src="styles/photo/fullstar.png" alt="">
+                            <img src="styles/photo/fullstar.png" alt="">
+                            <img src="styles/photo/half star.png" alt="">
+                        </div>
+                        <div class="last">
+                            <div class="one">
+                                <h4>$<%=arr[i].price%></h4>
+                            </div>
+                            <div class="two">
+                            <%let ck = 0%>
+                            <%for(let j=0;j<brr.length;j++){
+                                if(brr[j].id===arr[i].id){
+                                    ck = 1;break;
+                                }
+                            }%>    
+                            <%if(ck===0){%>
+                                <form action="/AddToWishlist" method="post">
+                                <button class="heart" name="name" value= <%=arr[i].id%>>
+                                    <img src="styles/photo/wishlist0.png" alt="">
+                                </button>
+                               </form>
+                            <%}else{%>
+                                <form action="/remove_from_wishlist" method="post">
+                                <button class="heart" name="name" value= <%=arr[i].id%>>
+                                    <img src="styles/photo/wishlist1.png" alt="">
+                                </button>
+                            </form>
+                            <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <%}%>
+        </div>
+    </section>
+
+    <section class="banner">
+      <div class="con1"><img src="styles/photo/hurryup.jpg" alt=""></div>
+      <div class="con2"><img src="styles/photo/limited_offer.jpg" alt=""></div>
+    </section>
+    
+    <section class="ban">
+        <div class="boxx">
+            <h4>crazy deals</h4>
+            <h2>buy 1 get 1 free</h2>
+            <p>The best classic dress is on sale</p>
+            <button>Learn More</button>
+        </div><div class="boxy">
+            <h4>spring/summer</h4>
+            <h2>upcoming season</h2>
+            <p>The best classic dress is on sale</p>
+            <button>Collection</button>
+        </div>
+    </section>
+    <%- include("footer.ejs")%>
+    <script src="styles/script2.js"></script>
+</body>
+</html>

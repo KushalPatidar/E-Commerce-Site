@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product1</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/p1.css">
+    <link rel="stylesheet" href="/styles/media2.css">
+    <link rel="stylesheet" href="/styles/media.css">
+</head>
+<body>
+    <header> 
+        <nav>
+           <div class="logo">
+              <img src="/styles/photo/Screenshot (257).png" alt="">
+           </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <%if(flag===1){%>
+                    <li><a href="/logout">Logout</a></li>
+                <%}else{%>
+                   <li><a href="/l">Login</a></li>
+                <%}%>
+                <li><a href="/Wishlist">Wishlist</a></li>
+                <li><a href="#">Contact</a></li>
+                <a href="/cart"><img src="/styles/photo/cart.png" id="icon" alt=""></a>
+            </ul>
+        </nav>
+    </header>
+    <div class="prodetail">
+        <div class="left">
+            <div class="big">
+                <%let s ="/styles/photo/"+arr.id+".webp";
+                %>
+                <img src=<%=s%> id="big-image" alt="">
+            </div >
+            <div class="small">
+                <img src="/styles/photo/<%=arr.id%>a.webp" class="small-img" alt="" id="a">
+                <img src="/styles/photo/<%=arr.id%>b.webp" class="small-img" alt="" id="b">
+                <img src="/styles/photo/<%=arr.id%>c.webp" class="small-img" alt="" id="c">
+                <img src="/styles/photo/<%=arr.id%>d.webp" class="small-img" alt="" id="d">
+                
+            </div>
+        </div>
+        <div class="right">
+            <h3 class="c1"><%=arr.tag%></h3>
+            <h3 class="c2"><%=arr.name%></h3>
+            <h4 class="c3">Special price <%=arr.discount_in_Percentage%>% Off</h4>
+            <h2 class="c4">$<%=arr.price%></h2>
+            <div class="star">
+                <img src="/styles/photo/fullstar.png" alt="">
+                <img src="/styles/photo/fullstar.png" alt="">
+                <img src="/styles/photo/fullstar.png" alt="">
+                <img src="/styles/photo/fullstar.png" alt="">
+                <img src="/styles/photo/half star.png" alt="">
+            </div>
+            <form action="/AddToCart" method="post">
+                <div class="dropdown">
+                    <label for="option"><b> Select size :</b></label>
+                    <select name="SelectOption" id="option">
+                        <option value="Small">Small</option>
+                        <option value="M">M</option>
+                        <option value="Large">Large</option>
+                        <option value="XL">XL</option>
+                        <option value="XLL">XXL</option>
+                    </select>
+                </div>
+                <input id="in" type="number" value="1" name="quantity">
+                <button class="but" name="name" value="<%=arr.id%>">Add To Cart</button>
+            </form>
+            <h4 class="c5">Product Details</h4>
+            <p id="pdetail">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque iusto dicta vel recusandae, odio, voluptate architecto nesciunt voluptates quibusdam mollitia, nostrum vitae earum rem quidem ex ipsum. Explicabo voluptas perferendis est impedit voluptatum, sequi, minus harum eum vel aut dolorum quis obcaecati repudiandae quod, a repellat provident quidem! Dolore odit nisi commodi eum nulla sed dolorum itaque et eligendi, quisquam iusto sunt. Voluptates deserunt ut culpa placeat distinctio porro fugit et? Minima, rem perferendis magnam dolorum pariatur incidunt laudantium quod voluptatem voluptatum modi nesciunt. Cupiditate nihil iste repellendus, modi quae voluptatibus quia minus! Quibusdam, dolorum, quidem autem non error harum libero facere ratione voluptatum nostrum dolorem id maxime voluptatibus, iste ex doloribus voluptatem vitae dignissimos corrupti ut labore voluptates? In, quae ratione. Esse inventore incidunt atque delectus? Dolore natus necessitatibus adipisci, fugiat labore minima quasi nisi obcaecati? Fugiat perferendis harum minus aut, odio atque doloremque deleniti eos deserunt ea voluptatum dolor quidem assumenda pariatur voluptas! Voluptate, repellendus, ipsa debitis labore fugiat dolores cupiditate iste corporis quidem quos temporibus provident soluta explicabo est officia aut delectus. Iure officiis nihil inventore nemo similique voluptatibus optio. Fuga autem nam, optio reprehenderit dignissimos aspernatur ipsa maiores nulla quas, iusto quibusdam maxime totam qui aliquid.
+            </p>
+        </div>
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="footer-b1">
+            <h3 class="Conn">Contact</h3>
+            <p><b>Address:</b> 562 Wellington Road,Street 32,San Francisco</p>
+            <p><b>Phone:</b> +01 3333 365/(+91) 01 2345 6789</p>
+            <h3>Follow Us</h3>
+            <div class="follow">
+                <a href="#"><img src="/styles/photo/facbook icon.png" alt=""></a>
+                <a href="#"><img src="/styles/photo/insta.png" alt=""></a>
+                <a href="#"><img src="/styles/photo/twitter.png" alt=""></a>
+                <a href="#"><img src="/styles/photo/linkdin.png" alt=""></a>
+            </div>
+        </div>
+
+            <div class="footer-b2">
+                <h3>About</h3>
+                <p><a href="#">About Us</a></p>
+                <p><a href="#">Delivery Information</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms and Conditions</a></p>
+                <p><a href="#">Contact Us</a></p>
+            </div>
+            <div class="footer-b3">
+                <h3>My account</h3>
+                <p><a href="#">Sign In</a></p>
+                <p><a href="#">View Cart</a></p>
+                <p><a href="#">My Wishlist</a></p>
+                <p><a href="#">Track My Order</a></p>
+                <p><a href="#">Help</a></p>
+            </div>
+        <div class="footer-b4">
+            <h3>Install App</h3>
+            <p>From App Store or Google Play Store</p>
+            <img src="/styles/photo/app_store.jpg" class="store" alt="">
+            <img src="/styles/photo/play_storee.jpg" class="store" alt="">
+            <p>Secured Payment Gateways</p>
+            <div class="payment">
+                <img src="/styles/photo/visaa.jpg" alt="">
+                <img src="/styles/photo/mastercard.png" alt="">
+                <img src="/styles/photo/net banking.png" alt="">
+                <img src="/styles/photo/codd.jpg" id="cod" alt="">
+                <img src="/styles/photo/emi.png" alt="">
+            </div>
+           
+        </div>
+    </div>
+    <script src="/styles/script.js"></script>
+</body>
+</html>

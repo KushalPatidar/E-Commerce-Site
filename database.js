@@ -16,7 +16,6 @@ const CartSchema = new mongoose.Schema({
     },
     id:{
         type:String,
-        unique:true,
         required:true
     },
     qty:Number,
@@ -29,10 +28,11 @@ const WishSchema = new mongoose.Schema({
     },
     id:{
         type:String,
-        unique:true,
         required:true
     }
 })
+CartSchema.index({ email: 1, id: 1 }, { unique: true });
+WishSchema.index({ email: 1, id: 1 }, { unique: true });
 export const user = mongoose.model("user",UserSchema);
 export const cart = mongoose.model("cart",CartSchema);
 export const wish = mongoose.model("wish",WishSchema);
